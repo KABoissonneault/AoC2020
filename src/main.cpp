@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <charconv>
+#include <filesystem>
 
 #include <fmt/format.h>
 
@@ -23,7 +24,7 @@ namespace
 	};
 
 	int g_day;
-	std::string g_input;
+	char const* g_filename;
 
 	void parse_args(char** argv)
 	{
@@ -38,16 +39,10 @@ namespace
 					if(argv[1] == nullptr)
 						throw std::runtime_error("Missing argument after '--file' flag");
 
-					char const* filepath = argv[1];
-					std::ifstream file_input(filepath);
+					if (!std::filesystem::exists(argv[1]))
+						throw std::runtime_error("Invalid path argument after '--file' flag");
 
-					if (!file_input.is_open())
-						throw std::runtime_error(fmt::format("Invalid filepath '{}' after '--file' flag", filepath));
-
-					file_input.seekg(0, std::ios::end);
-					g_input.resize(file_input.tellg());
-					file_input.seekg(0);
-					file_input.read(g_input.data(), g_input.size());
+					g_filename = argv[1];
 
 					argv += 2;
 				}
@@ -82,19 +77,19 @@ int main(int argc, char** argv)
 	(void)argc;
 	parse_args(argv + 1);
 
-	if (g_input.empty())
-		throw std::runtime_error("No input provided");
+	if (g_filename == nullptr)
+		throw std::runtime_error("Missing '--file' flag with filepath argument");
 
 	program const& p = programs[g_day];
 
-	std::stringstream ss;
-	ss.write(g_input.data(), g_input.size());
+	std::ifstream file(g_filename);
 
-	std::string const result1 = p.part1(ss);
+	std::string const result1 = p.part1(file);
 
-	ss.seekg(0);
+	file.clear();
+	file.seekg(0, std::ios::beg);
 
-	std::string const result2 = p.part2(ss);
+	std::string const result2 = p.part2(file);
 
 	printf("1: %s\n2: %s\n", result1.c_str(), result2.c_str());
 
