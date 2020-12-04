@@ -30,6 +30,9 @@
     <ClCompile Include="..\src\programs\day3.cpp">
       <Filter>Source Files\programs</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\programs\day4.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\programs\day1.h">
@@ -42,6 +45,9 @@
       <Filter>Source Files\programs</Filter>
     </ClInclude>
     <ClInclude Include="..\src\programs\day3.h">
+      <Filter>Source Files\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\programs\day4.h">
       <Filter>Source Files\programs</Filter>
     </ClInclude>
   </ItemGroup>
