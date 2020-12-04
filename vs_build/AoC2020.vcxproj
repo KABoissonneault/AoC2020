@@ -148,10 +148,12 @@
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\programs\day1.cpp" />
     <ClCompile Include="..\src\programs\day2.cpp" />
+    <ClCompile Include="..\src\programs\day3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\programs\day1.h" />
     <ClInclude Include="..\src\programs\day2.h" />
+    <ClInclude Include="..\src\programs\day3.h" />
     <ClInclude Include="..\src\programs\programs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
