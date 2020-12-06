@@ -151,6 +151,7 @@
     <ClCompile Include="..\src\programs\day3.cpp" />
     <ClCompile Include="..\src\programs\day4.cpp" />
     <ClCompile Include="..\src\programs\day5.cpp" />
+    <ClCompile Include="..\src\programs\day6.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\programs\programs.h" />
