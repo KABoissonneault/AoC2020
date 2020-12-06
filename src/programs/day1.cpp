@@ -1,4 +1,4 @@
-#include "day1.h"
+#include "programs.h"
 
 #include <iostream>
 #include <charconv>
