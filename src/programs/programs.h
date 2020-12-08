@@ -9,6 +9,7 @@ namespace kab::day3 { std::string solve_1(std::istream& i); std::string solve_2(
 namespace kab::day4 { std::string solve_1(std::istream& i); std::string solve_2(std::istream& i); }
 namespace kab::day5 { std::string solve_1(std::istream& i); std::string solve_2(std::istream& i); }
 namespace kab::day6 { std::string solve_1(std::istream& i); std::string solve_2(std::istream& i); }
+namespace kab::day7 { std::string solve_1(std::istream& i); std::string solve_2(std::istream& i); }
 
 #define KAB_AOC_PROGRAMS \
 	{ kab::day1::solve_1, kab::day1::solve_2 }, \
@@ -17,4 +18,5 @@ namespace kab::day6 { std::string solve_1(std::istream& i); std::string solve_2(
 	{ kab::day4::solve_1, kab::day4::solve_2 }, \
 	{ kab::day5::solve_1, kab::day5::solve_2 }, \
 	{ kab::day6::solve_1, kab::day6::solve_2 }, \
+	{ kab::day7::solve_1, kab::day7::solve_2 }, \
 	
